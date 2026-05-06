@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Les Sister's BERNA valorise les productions locales africaines en agriculture, élevage et pêche avec des services fiables d'achat, de transport et de livraison.">
+  <meta name="theme-color" content="#1B5E20">
+  <title>Les Sister's BERNA | Production locale, logistique et livraison</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <style>
+:root {
+  --forest: #1B5E20;
+  --forest-dark: #123F16;
+  --brown: #5D4037;
+  --blue: #0277BD;
+  --beige: #F7F3EA;
+  --cream: #FFFDF7;
+  --ink: #172018;
+  --muted: #647064;
+  --line: rgba(27, 94, 32, 0.14);
+  --shadow: 0 18px 48px rgba(24, 38, 24, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --header-height: 76px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.container {
+  width: min(100% - 32px, 1160px);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 253, 247, 0.9);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+
+.navbar {
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--forest), var(--brown));
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 24px rgba(27, 94, 32, 0.22);
+}
+
+.brand strong,
+.brand small {
+  display: block;
+  line-height: 1.1;
+}
+
+.brand small {
+  margin-top: 2px;
+  color: var(--blue);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.nav-toggle {
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-content: center;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 20px;
+  height: 2px;
+  background: var(--forest);
+  border-radius: 999px;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-links {
+  position: fixed;
+  inset: var(--header-height) 16px auto 16px;
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 16px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.nav-links.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-links a {
+  display: block;
+  padding: 12px 14px;
+  color: var(--muted);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--forest);
+  background: rgba(27, 94, 32, 0.08);
+  outline: none;
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100svh - var(--header-height));
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(10, 31, 12, 0.85), rgba(10, 31, 12, 0.46) 58%, rgba(10, 31, 12, 0.22)),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=86") center / cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 28%;
+  background: linear-gradient(0deg, var(--cream), rgba(255, 253, 247, 0));
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  padding: 104px 0 92px;
+  color: #fff;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: #A7D8FF;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 720px;
+  margin-bottom: 24px;
+  font-size: clamp(2.6rem, 8vw, 5.7rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-bottom: 16px;
+  font-size: clamp(2rem, 5.5vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+h3 {
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.hero-text {
+  max-width: 650px;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.08rem;
+}
+
+.hero-actions,
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background: var(--forest);
+  box-shadow: 0 14px 28px rgba(27, 94, 32, 0.24);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--forest-dark);
+}
+
+.btn-ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.section {
+  padding: 88px 0;
+}
+
+.intro-section {
+  padding: 0 0 48px;
+  margin-top: -36px;
+  position: relative;
+  z-index: 2;
+}
+
+.trust-strip {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.trust-strip article {
+  padding: 24px;
+  background: #fff;
+}
+
+.trust-strip strong {
+  display: block;
+  color: var(--forest);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.trust-strip span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.section-heading {
+  max-width: 740px;
+  margin-bottom: 40px;
+}
+
+.section-heading p:not(.eyebrow),
+.logistics-copy > p,
+.contact-copy > p {
+  color: var(--muted);
+  font-size: 1.03rem;
+}
+
+.production-grid,
+.delivery-grid,
+.steps {
+  display: grid;
+  gap: 24px;
+}
+
+.production-card,
+.service-card,
+.step,
+.contact-form {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 32px rgba(24, 38, 24, 0.08);
+}
+
+.production-card {
+  overflow: hidden;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.production-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+.production-card img {
+  height: 230px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 24px;
+}
+
+.card-icon,
+.service-icon,
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-grid;
+  place-items: center;
+  margin-bottom: 16px;
+  color: #fff;
+  background: var(--forest);
+  border-radius: var(--radius-sm);
+  font-weight: 900;
+}
+
+.card-body p,
+.service-card p,
+.step p,
+.feature-list p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.logistics-section {
+  background: var(--beige);
+}
+
+.logistics-layout,
+.contact-layout {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+
+.feature-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.feature-list article {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(27, 94, 32, 0.1);
+  border-radius: var(--radius-md);
+}
+
+.feature-icon {
+  margin-bottom: 0;
+  background: var(--blue);
+}
+
+.logistics-panel {
+  position: relative;
+}
+
+.logistics-panel img {
+  min-height: 360px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.metric-card {
+  width: min(86%, 360px);
+  margin: -64px auto 0;
+  position: relative;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.metric-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--brown);
+  font-size: 1.4rem;
+}
+
+.metric-card span {
+  color: var(--muted);
+}
+
+.service-card {
+  padding: 28px;
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(2, 119, 189, 0.32);
+}
+
+.service-icon {
+  background: var(--brown);
+}
+
+.steps {
+  margin-top: 24px;
+}
+
+.step {
+  padding: 28px;
+}
+
+.step span {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: var(--blue);
+  font-weight: 900;
+}
+
+.contact-section {
+  color: #fff;
+  background:
+    linear-gradient(120deg, rgba(18, 63, 22, 0.96), rgba(93, 64, 55, 0.9)),
+    url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80") center / cover;
+}
+
+.contact-section .eyebrow {
+  color: #A7D8FF;
+}
+
+.contact-copy p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.contact-details {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+  font-style: normal;
+}
+
+.contact-details a,
+.contact-details span {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-form {
+  padding: 24px;
+  color: var(--ink);
+}
+
+.form-row {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+label {
+  color: var(--forest-dark);
+  font-weight: 800;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  color: var(--ink);
+  background: #FAFAF7;
+  border: 1px solid rgba(27, 94, 32, 0.2);
+  border-radius: var(--radius-sm);
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  background: #fff;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(2, 119, 189, 0.12);
+  outline: none;
+}
+
+.form-status {
+  min-height: 24px;
+  margin: 16px 0 0;
+  color: var(--forest);
+  font-weight: 800;
+}
+
+.site-footer {
+  padding: 28px 0;
+  color: rgba(255, 255, 255, 0.86);
+  background: #102814;
+}
+
+.footer-content {
+  justify-content: space-between;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-content a {
+  color: #A7D8FF;
+  font-weight: 800;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 640px) {
+  .container {
+    width: min(100% - 48px, 1160px);
+  }
+
+  .trust-strip,
+  .delivery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trust-strip article:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .contact-form {
+    padding: 32px;
+  }
+}
+
+@media (min-width: 820px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .production-grid,
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .trust-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .trust-strip article:last-child {
+    grid-column: auto;
+  }
+
+  .logistics-layout,
+  .contact-layout {
+    grid-template-columns: 0.95fr 1.05fr;
+  }
+
+  .contact-layout {
+    grid-template-columns: 0.9fr 1fr;
+  }
+}
+
+@media (min-width: 1040px) {
+  .section {
+    padding: 112px 0;
+  }
+
+  .intro-section {
+    padding-bottom: 56px;
+  }
+
+  .delivery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="En-tête du site">
+    <nav class="navbar container" aria-label="Navigation principale">
+      <a class="brand" href="#accueil" aria-label="Les Sister's BERNA - Accueil">
+        <span class="brand-mark" aria-hidden="true">LS</span>
+        <span>
+          <strong>Les Sister's</strong>
+          <small>BERNA</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="primary-menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="primary-menu">
+        <li><a href="#productions">Productions</a></li>
+        <li><a href="#logistique">Logistique</a></li>
+        <li><a href="#livraison">Livraison</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="container hero-content reveal">
+        <p class="eyebrow">Agropastoral local · Qualité contrôlée · Livraison fiable</p>
+        <h1 id="hero-title">Des produits locaux frais, tracés et livrés avec confiance.</h1>
+        <p class="hero-text">Les Sister's BERNA accompagne les familles, restaurateurs et commerçants avec des productions agricoles, animales et halieutiques sélectionnées au plus près des producteurs.</p>
+        <div class="hero-actions" aria-label="Actions principales">
+          <a class="btn btn-primary" href="#productions">Découvrir</a>
+          <a class="btn btn-ghost" href="#contact">Nous contacter</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro-section" aria-label="Indicateurs de confiance">
+      <div class="container trust-strip reveal">
+        <article>
+          <strong>3</strong>
+          <span>filières locales</span>
+        </article>
+        <article>
+          <strong>24h</strong>
+          <span>préparation rapide</span>
+        </article>
+        <article>
+          <strong>100%</strong>
+          <span>service de proximité</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="productions" aria-labelledby="productions-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Productions</p>
+          <h2 id="productions-title">Une offre agropastorale complète et maîtrisée.</h2>
+          <p>Des produits choisis pour leur fraîcheur, leur origine claire et leur capacité à répondre aux besoins du marché local.</p>
+        </div>
+
+        <div class="production-grid">
+          <article class="production-card reveal">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Champ agricole verdoyant au lever du jour" loading="lazy">
+            <div class="card-body">
+              <span class="card-icon" aria-hidden="true">&#127793;</span>
+              <h3>Agriculture</h3>
+              <p>Céréales, légumes, tubercules et produits saisonniers sélectionnés avec une attention constante portée à la qualité.</p>
+            </div>
+          </article>
+
+          <article class="production-card reveal">
+            <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=900&q=80" alt="Bétail dans une exploitation pastorale" loading="lazy">
+            <div class="card-body">
+              <span class="card-icon" aria-hidden="true">&#128004;</span>
+              <h3>Élevage</h3>
+              <p>Approvisionnement en produits issus de l'élevage, avec des partenaires attentifs au bien-être animal et à la fraîcheur.</p>
+            </div>
+          </article>
+
+          <article class="production-card reveal">
+            <img src="https://images.unsplash.com/photo-1544943910-4c1dc44aab44?auto=format&fit=crop&w=900&q=80" alt="Poissons frais disposés sur un marché" loading="lazy">
+            <div class="card-body">
+              <span class="card-icon" aria-hidden="true">&#128031;</span>
+              <h3>Pêche</h3>
+              <p>Poissons et produits halieutiques frais, adaptés aux besoins des ménages, restaurants et points de vente.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section logistics-section" id="logistique" aria-labelledby="logistics-title">
+      <div class="container logistics-layout">
+        <div class="logistics-copy reveal">
+          <p class="eyebrow">Logistique & transport</p>
+          <h2 id="logistics-title">Un service organisé pour sécuriser chaque achat.</h2>
+          <p>De la sélection des produits jusqu'à leur transport, Les Sister's BERNA met l'accent sur la fiabilité, la ponctualité et la conservation des marchandises.</p>
+          <div class="feature-list">
+            <article>
+              <span class="feature-icon" aria-hidden="true">&#10003;</span>
+              <div>
+                <h3>Achat de produits</h3>
+                <p>Identification de lots disponibles, contrôle visuel et coordination avec les producteurs locaux.</p>
+              </div>
+            </article>
+            <article>
+              <span class="feature-icon" aria-hidden="true">&#8599;</span>
+              <div>
+                <h3>Transport professionnel</h3>
+                <p>Organisation des trajets pour préserver la qualité et limiter les ruptures dans la chaîne d'approvisionnement.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="logistics-panel reveal">
+          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=900&q=80" alt="Camion de transport sur une route professionnelle" loading="lazy">
+          <div class="metric-card">
+            <strong>Traçabilité</strong>
+            <span>Origine, disponibilité et livraison suivies avec rigueur.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="livraison" aria-labelledby="delivery-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Vente & livraison</p>
+          <h2 id="delivery-title">Un parcours simple, du point de vente jusqu'à votre porte.</h2>
+          <p>Une expérience pensée pour commander facilement, recevoir rapidement et garder une relation directe avec l'équipe.</p>
+        </div>
+
+        <div class="delivery-grid">
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">&#8962;</span>
+            <h3>Points de vente</h3>
+            <p>Des produits disponibles selon les arrivages, avec un accueil de proximité et des conseils adaptés.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">&#8658;</span>
+            <h3>Livraison à domicile</h3>
+            <p>Une solution pratique pour les ménages, restaurants et commerçants qui souhaitent gagner du temps.</p>
+          </article>
+        </div>
+
+        <div class="steps" aria-label="Processus de commande">
+          <article class="step reveal">
+            <span>01</span>
+            <h3>Demande</h3>
+            <p>Vous indiquez les produits souhaités, les quantités et votre localisation.</p>
+          </article>
+          <article class="step reveal">
+            <span>02</span>
+            <h3>Confirmation</h3>
+            <p>L'équipe confirme la disponibilité, le prix et le délai de préparation.</p>
+          </article>
+          <article class="step reveal">
+            <span>03</span>
+            <h3>Livraison</h3>
+            <p>Votre commande est préparée, transportée et remise dans de bonnes conditions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Parlons de vos besoins en produits locaux.</h2>
+          <p>Pour une commande, un partenariat ou une demande de livraison, envoyez un message à l'équipe Les Sister's BERNA.</p>
+          <address class="contact-details">
+            <a href="mailto:audamourmokoko@gmail.com">Email : audamourmokoko@gmail.com</a>
+            <a href="tel:+242068657719">Téléphone : 00242 06 865 77 19 / 05 047 66 83</a>
+            <a href="https://wa.me/242068657719" target="_blank" rel="noopener">WhatsApp : 00242 06 865 77 19</a>
+            <span>Localisation : Marché local africain</span>
+          </address>
+        </div>
+
+        <form class="contact-form reveal" aria-label="Formulaire de contact">
+          <div class="form-row">
+            <label for="name">Nom complet</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Votre nom" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="votre@email.com" required>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Votre demande" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Envoyer la demande</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2026 Les Sister's BERNA. Production locale, qualité et confiance.</p>
+      <a href="#accueil">Retour en haut</a>
+    </div>
+  </footer>
+
+  <script>
+const navigation = (() => {
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.querySelector(".nav-links");
+  const links = document.querySelectorAll(".nav-links a");
+
+  if (!toggle || !menu) {
+    return;
+  }
+
+  const closeMenu = () => {
+    toggle.classList.remove("is-open");
+    menu.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Ouvrir le menu");
+  };
+
+  const openMenu = () => {
+    toggle.classList.add("is-open");
+    menu.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Fermer le menu");
+  };
+
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.classList.contains("is-open");
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  links.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+})();
+
+const scrollReveal = (() => {
+  const elements = document.querySelectorAll(".reveal");
+
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.18,
+      rootMargin: "0px 0px -40px 0px"
+    }
+  );
+
+  elements.forEach((element) => observer.observe(element));
+})();
+
+const contactForm = (() => {
+  const form = document.querySelector(".contact-form");
+
+  if (!form) {
+    return;
+  }
+
+  const status = form.querySelector(".form-status");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    form.reset();
+
+    if (status) {
+      status.textContent = "Merci. Votre demande a bien été préparée pour l'équipe Les Sister's BERNA.";
+    }
+  });
+})();
+
+  </script>
+</body>
+</html>
